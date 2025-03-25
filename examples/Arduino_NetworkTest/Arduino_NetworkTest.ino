@@ -15,7 +15,7 @@
 // Use Hardware Serial on Mega, Leonardo, Micro
 #define SerialAT Serial1
 
-#define TINY_GSM_MODEM_SIM7000
+#define TINY_GSM_MODEM_SIM7070
 #define TINY_GSM_RX_BUFFER 1024 // Set RX buffer to 1Kb
 #define SerialAT Serial1
 
@@ -182,7 +182,7 @@ void setup()
 
     // Check network signal and registration information
     Serial.println("> SIM7000/SIM7070 uses automatic mode to access the network. The access speed may be slow. Please wait patiently");
-    SIM70xxRegStatus status;
+    RegStatus status;
     timeout = millis();
     do {
         int16_t sq =  modem.getSignalQuality();
@@ -277,7 +277,7 @@ void loop()
         Serial.print(millis() / 1000);
         Serial.print("]:");
         int16_t sq = modem.getSignalQuality();
-        SIM70xxRegStatus s = modem.getRegistrationStatus();
+        RegStatus s = modem.getRegistrationStatus();
         if (s != REG_OK_HOME && s != REG_OK_ROAMING) {
             Serial.println("Devices lost network connect!");
         } else {
