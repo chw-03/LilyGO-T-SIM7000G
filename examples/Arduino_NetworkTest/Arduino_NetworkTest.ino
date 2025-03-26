@@ -164,7 +164,7 @@ void setup()
     // 2 NB-IoT
     // 3 CAT-M and NB-IoT
     // Set network preferre to auto
-    uint8_t perferred = 3;
+    uint8_t perferred = 1;
     modem.setPreferredMode(perferred);
 
     if (perferred == 2) {
@@ -177,7 +177,7 @@ void setup()
     // 38 LTE only
     // 51 GSM and LTE only
     // Set network mode to auto
-    modem.setNetworkMode(2);
+    modem.setNetworkMode(38);
 
 
     // Check network signal and registration information
